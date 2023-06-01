@@ -17,3 +17,11 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+
+class Detail(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    detail_text = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.detail_text
